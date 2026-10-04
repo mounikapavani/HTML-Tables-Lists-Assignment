@@ -1,0 +1,173 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+/* Navigation */
+nav {
+    background-color: #222;
+    padding: 15px;
+}
+
+/* Child combinator selector */
+nav > ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Direct child <a> elements inside nav */
+nav > ul > li > a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* Unique hover effect using child combinator */
+nav > ul > li > a:hover {
+    background-color: #ff9800;
+    color: black;
+    border-radius: 5px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px;
+}
+
+/* Product section */
+.products {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Product cards */
+.product {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Descendant combinator */
+section.products h2 {
+    font-weight: bold;
+    color: #333;
+}
+
+/* nth-child(odd) */
+.products article:nth-child(odd) {
+    background-color: #e8f4ff;
+}
+
+/* Featured product */
+.product.featured {
+    border: 3px solid #ff9800;
+}
+
+.product img {
+    width: 100%;
+    max-width: 250px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Product price */
+.price {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* ::first-letter pseudo-element */
+.product .description::first-letter {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Sibling combinator */
+/* Article directly following a featured article */
+article.featured + article {
+    border-left: 6px solid #ff5722;
+}
+
+/* Features */
+#features {
+    width: 80%;
+    margin: 40px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.features li {
+    padding: 10px;
+}
+
+/* Every third li */
+.features li:nth-of-type(3n) {
+    background-color: #ffe0b2;
+    font-weight: bold;
+}
+
+/* Contact form */
+#contact {
+    width: 60%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* Form fields */
+#contact input,
+#contact textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 8px 0 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Attribute selector */
+/* Any input whose type contains "mail" */
+input[type*="mail"] {
+    background-color: #fff3cd;
+}
+
+/* :not() pseudo-class */
+/* Focus style for controls that are NOT disabled */
+#contact input:not(:disabled):focus,
+#contact textarea:not(:disabled):focus {
+    outline: 3px solid #2196f3;
+    border-color: #2196f3;
+}
+
+/* Button */
+button {
+    padding: 12px 25px;
+    border: none;
+    background-color: #2196f3;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1565c0;
+}
